@@ -9,10 +9,18 @@ RSpec.describe Character, type: :model do
 	end
 	describe "when character is initialized" do
 		it "should assign correct powers" do
-			character = Character.new(chr_class: "Brick")
+			character = Character.new(chr_class: "Technology")
 			character.assign_powers
-			expect(character.powers).to eq "Might, Heavy Weapons, Earth"
+			expect(character.powers).to eq "Themed Weaponry(Hand to Hand), Base & Vehicles, Themed Weaponry(Ranged), Eye Beams, Scientist, Utility Belt"
+		end
+
+		it "should assign correct skills" do
+			character = Character.new(chr_class: "Technology")
+			character.assign_skills
+			expect(character.skills).to eq "Well Connected & Persuasive, Detective, Knowledgeable"
 		end
 	end
 
 end
+
+
